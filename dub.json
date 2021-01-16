@@ -1,0 +1,17 @@
+{
+	"authors": [
+		"root"
+	],
+	"copyright": "Copyright © 2021, root",
+	"dependencies": {
+		"xl-d": ">=0.0.0"
+	},
+	"description": "A minimal D application.",
+	"libs": [
+		"xl_wrap",
+		"xl",
+		"stdc++"
+	],
+	"license": "proprietary",
+	"name": "xtablesd"
+}
