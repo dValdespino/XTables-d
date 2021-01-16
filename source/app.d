@@ -17,7 +17,7 @@ alias Font        = void*;
 template SetCell(T){
 	void SetCell(SheetHandle handle, int row, int col, T value, Format fmt = null){
 		Format _make_float2_format(Format fmt,bool percent=false){
-			fmt = xlFormatSetNumFormatA(percent?NumFormat.NUMFORMAT_PERCENT_D2:NumFormat.NUMFORMAT_NUMBER_D2);
+			fmt.xlFormatSetNumFormatA(percent?NumFormat.NUMFORMAT_PERCENT_D2:NumFormat.NUMFORMAT_NUMBER_D2);
 
 			return fmt;
 		}
@@ -39,6 +39,8 @@ template SetCell(T){
 				//Get as float
 				case ColumnType.Percent:
 					isPercent=true;
+					goto case;
+
 				case ColumnType.Float:
 					handle.SetCell(row,col,value.AsFloat(), _make_float2_format(fmt, isPercent));
 					break;
