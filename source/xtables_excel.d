@@ -160,14 +160,6 @@ class XLSBook : XBook
         int TitleBackgroundColor = Color.COLOR_GRAY40;
         int DataBackgroundColor = Color.COLOR_GRAY25;
 
-        //DebugColor!("COLOR_GRAY25");
-        //DebugColor!("COLOR_GRAY40");
-        //DebugColor!("COLOR_RED");
-        //DebugColor!("COLOR_GREEN");
-        //DebugColor!("COLOR_BLUE");
-        //DebugColor!("COLOR_WHITE");
-        //DebugColor!("COLOR_BLACK");
-
         Font headerFont = this.Handle.xlBookAddFontA(null);
         headerFont.xlFontSetColorA(Color.COLOR_BLACK);
         headerFont.xlFontSetNameA("Open Sans");
@@ -202,6 +194,9 @@ class XLSBook : XBook
         Format dataFormat = xlBookAddFormatA(this.Handle, null);
         dataFormat.xlFormatSetFontA(dataFont);
         dataFormat.xlFormatSetPatternForegroundColorA(DataBackgroundColor);
+        dataFormat.xlFormatSetAlignHA(AlignH.ALIGNH_LEFT);
+        dataFormat.xlFormatSetAlignVA(AlignV.ALIGNV_TOP);
+        dataFormat.xlFormatSetWrapA(true);
 
         dataFormat.xlFormatSetFillPatternA(FillPattern.FILLPATTERN_SOLID);
 

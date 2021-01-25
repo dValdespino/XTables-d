@@ -5,8 +5,9 @@ import core.stdc.stdint;
 import core.stdc.string;
 import core.stdc.stdlib;
 import std.string;
+import std.typecons: tuple,Tuple;
 
-pragma(lib, "xl");
+ 
 
 enum ColumnType
 {
@@ -214,8 +215,6 @@ public:
 };
 
 alias CPTR = void*;
-
-import std.typecons;
 
 //template PushVarArgs(values){
 //  void Push(values){
